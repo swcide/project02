@@ -2,6 +2,8 @@
  ------------------------------------
 
 ## 서비스 및 프로젝트 소개
-<img src="https://img.shields.io/badge/-안녕하세요-green" width="10px">
 <https://img.shields.io/badge/license-mit-green.svg"> 
+https://img.shields.io/badge/--.svg 
 
+APM: /apm/l/:packageName.svg 
+AUR license: /aur/license/:packageName.svg
