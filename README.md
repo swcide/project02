@@ -3,5 +3,5 @@
 
 ## 서비스 및 프로젝트 소개
 
-<div> <img src="" style="height : auto; margin-left : 10px; margin-right : 10px;"/>
+<div>< style="height : auto; margin-left : 10px; margin-right : 10px;"/>
 
