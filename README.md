@@ -2,5 +2,5 @@
  ------------------------------------
 
 ## 서비스 및 프로젝트 소개
-http://img.shields.io/badge/-표시할뱃지이름(임의)-색상코드(#제외)?style=(스타일)&logo=(로고)&link=(링크)
+[![Medium Badge](http://img.shields.io/badge/-Medium-12100E?style=flat&logo=medium&l]
 
