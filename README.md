@@ -2,6 +2,6 @@
  ------------------------------------
 
 ## 서비스 및 프로젝트 소개
-<a href=""><img src="https://img.shields.io/badge/-%E3%85%8E%E3%85%87%E3%85%8E%E3%85%87-green" width="400px" alt="sample image"></a> 
+<img src="https://img.shields.io/badge/-%E3%85%8E%E3%85%87%E3%85%8E%E3%85%87-green" width="400px" alt="sample image">
 
 
