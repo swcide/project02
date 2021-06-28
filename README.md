@@ -2,5 +2,5 @@
  ------------------------------------
 
 ## 서비스 및 프로젝트 소개
-[![Medium Badge](http://img.shields.io/badge/-Medium-12100E?style=flat&logo=medium&l]
+![Medium Badge](http://img.shields.io/badge/-Medium-12100E?style=flat&logo=medium&l
 
