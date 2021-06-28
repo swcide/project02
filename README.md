@@ -2,5 +2,5 @@
  ------------------------------------
 
 ## 서비스 및 프로젝트 소개
-<img src="https://img.shields.io/github/followers/AlpoxDev?style=social">
+http://img.shields.io/badge/-표시할뱃지이름(임의)-색상코드(#제외)?style=(스타일)&logo=(로고)&link=(링크)
 
