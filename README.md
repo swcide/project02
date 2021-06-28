@@ -3,5 +3,5 @@
 
 ## 서비스 및 프로젝트 소개
 
-<div> <img src="https://img.shields.io/static/v1?label=<LABEL>&message=<MESSAGE>&color=<COLOR>" style="height : auto; margin-left : 10px; margin-right : 10px;"/>
+<div> <img src="" style="height : auto; margin-left : 10px; margin-right : 10px;"/>
 
