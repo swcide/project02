@@ -2,4 +2,6 @@
  ------------------------------------
 
 ## 서비스 및 프로젝트 소개
-![](https://img.shields.io/badge/<LABEL>-<항해블로그>-<9cf>)
+<img src="https://img.shields.io/github/followers/AlpoxDev?style=social">
+
+![](https://img.shields.io/github/followers/AlpoxDev?style=social)
