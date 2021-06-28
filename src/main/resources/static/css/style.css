@@ -5733,8 +5733,8 @@ body:not(.stretched) .slider-parallax .slider-inner { left: auto; }
 @media (max-width: 991.98px) {
 
 	#slider {
-		display: -ms-flexbox !important;
-		display: flex !important;
+		display: -ms-flexbox ;
+		display: flex ;
 		flex-direction: column;
 		justify-content: center;
 	}
@@ -6455,8 +6455,8 @@ body:not(.has-plugin-html5video) .video-wrap video {
 
 #page-title {
 	position: relative;
-	padding: 4rem 0;
-	background-color: #F5F5F5;
+	padding: 2rem 0;
+
 	border-bottom: 1px solid #EEE;
 }
 
@@ -6470,7 +6470,7 @@ body:not(.has-plugin-html5video) .video-wrap video {
 	line-height: 1;
 	font-weight: 600;
 	letter-spacing: 1px;
-	color: #333;
+	color: #eee;
 	font-size: 2rem;
 	text-transform: uppercase;
 }
@@ -6684,7 +6684,7 @@ body:not(.has-plugin-html5video) .video-wrap video {
 
 #content {
 	position: relative;
-	background-color: #FFF;
+
 }
 
 #content p { line-height: 1.8; }
@@ -14481,7 +14481,7 @@ button.toast-close-button {
 	.sticky-footer #page-submenu,
 	.sticky-footer #page-title,
 	.sticky-footer #content {
-		z-index: 2;
+		z-index: 0;
 	}
 
 	.sticky-footer #content {
@@ -14502,7 +14502,7 @@ button.toast-close-button {
 }
 
 #copyrights {
-	padding: 40px 0;
+	padding: 0;
 	background-color: #DDD;
 	font-size: 0.875rem;
 	line-height: 1.8;

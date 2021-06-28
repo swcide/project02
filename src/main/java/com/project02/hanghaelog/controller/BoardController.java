@@ -19,25 +19,23 @@ public class BoardController {
 
     @PostMapping("/api/board")
     public Board Boardwrite(@RequestBody BoardRequestDto requestDto) {
+
         Board board = new Board(requestDto);
+        Board b = new Board();
         return boardRepository.save(board);
     }
-    @GetMapping("/api/memos")
-    public List<Board> getMemos() {
-        return boardRepository.findAllByOrderByModifiedAtDesc();
-    }
-
-    @PutMapping("/api/memos/{id}")
-    public Long updateMemo(@PathVariable Long id, @RequestBody BoardRequestDto requestDto) {
-        boardService.boardUpdate(id, requestDto);
-        return id;
+    @GetMapping("/api/board")
+    public List<Board> getBoardList() {
+        return boardRepository.findAllByOrderByIdDesc();
     }
 
 
-    @DeleteMapping("/api/memos/{id}")
-    public Long deleteMemo(@PathVariable Long id) {
-        boardRepository.deleteById(id);
-        return id;
+    @GetMapping("/api/board/detail/{id}")
+    public Board boardDetail(@PathVariable Long id) {
+
+        Board b = boardService.boardDetail(id);
+        return b ;
+
     }
 
 }

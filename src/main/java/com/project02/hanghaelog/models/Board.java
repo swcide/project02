@@ -12,27 +12,30 @@ import javax.persistence.*;
 public class Board extends Timestamped {
     @GeneratedValue(strategy = GenerationType.AUTO) // 아이디 시퀀스
     @Id
-    private Long Bid;
-    @Column(nullable = false)
-    private String bTitle;
-    @Column(nullable = false)
-    private String bWriter;
-    @Column(nullable = false)
-    private String bContent;
+    private Long id;
 
+    @Column(nullable = false)
+    private String title;
+
+    @Column(nullable = false)
+    private String writer;
+
+    @Column(nullable = false)
+    private String content;
+
+
+    public Board(String title, String writer, String content) {
+        this.title = title;
+        this.writer = writer;
+        this.content = content;
+    }
 
     public Board(BoardRequestDto requestDto) {
-        this.bTitle = requestDto.getBTitle();
-        this.bWriter = requestDto.getBWriter();
-        this.bContent = requestDto.getBContent();
+        this.title = requestDto.getTitle();
+        this.writer = requestDto.getWriter();
+        this.content = requestDto.getContent();
     }
 
-    public void boardUpdate(BoardRequestDto boardDto) {
-
-        this.bTitle = boardDto.getBTitle();
-        this.bWriter = boardDto.getBWriter();
-        this.bContent = boardDto.getBContent();
-    }
 
 
 }
