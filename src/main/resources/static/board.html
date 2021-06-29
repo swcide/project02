@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>항해로그999</title>
+
+	<link rel="shortcut icon" type="image/x-icon" href="images/favicon.png" />
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700|Poppins:300,400,500,600,700|PT+Serif:400,400i&display=swap" rel="stylesheet" type="text/css" />
 	<link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
     <link rel="stylesheet" href="css/style.css" type="text/css" />
@@ -37,8 +39,8 @@
 						<nav class="primary-menu col-lg-4 order-lg-3">
 							<ul class="menu-container justify-content-lg-end">
 								<li class="menu-item"><a class="menu-link" href="index.html" style="padding-top: 39px; padding-bottom: 39px;"><div>Home</div></a></li>
-								<li class="menu-item"><a class="menu-link" href="board.html"  style="padding-top: 39px; padding-bottom: 39px;"><div>Board</div></a></li>
-								<li class="menu-item"><a class="menu-link color" href="write.html" style="padding-top: 39px; padding-bottom: 39px;"><div>wirght</div></a></li>
+								<li class="menu-item"><a class="menu-link color" href="board.html"  style="padding-top: 39px; padding-bottom: 39px;"><div>Board</div></a></li>
+								<li class="menu-item"><a class="menu-link " href="write.html" style="padding-top: 39px; padding-bottom: 39px;"><div>write</div></a></li>
 							</ul>
 						</nav><!-- #primary-menu end -->
 					</div>
@@ -51,7 +53,6 @@
 		<section id="page-title"  >
 			<div class="container clearfix">
 				<h1>Board Page</h1>
-				<span>good</span>
 			</div>
         </section>
 <!--		page-title-->
@@ -77,7 +78,7 @@
 							</tr>
 						</thead>
 						<tbody id="tbody">
-						
+
 						</tbody>
 					</table>
 				</div>
@@ -125,52 +126,13 @@
 	<script src="js/functions.js"></script>
 	<script src="js/plugins.min.js"></script>
 	<script src="js/bs-datatable.js"></script>
+	<script src="js/main.js"></script>
+
 
     <script>
 		$(document).ready(function () {
 			getBoardList();
-
 		})
-		function getBoardList(){
-			$.ajax({
-				type: 'GET',
-				url: '/api/board',
-				success: function (response) {
-
-					if(!response){
-						$('#tbody').append('not')
-					}
-
-					for (let i = 0; i < response.length; i++) {
-						let boardDto =response[i];
-						let tempHtml = addHTML(boardDto);
-						// $('#tbody').empty()
-						$('#tbody').append(tempHtml)
-
-					}
-					$('#datatable1').dataTable()
-				}
-			})
-		}
-		function addHTML(boardDto){
-			let javaDate = new Date(boardDto.createdAt);
-			let year = javaDate.getFullYear()
-			let month = javaDate.getMonth()
-			let day = javaDate.getDay()
-			let createDate = year+"-"+month+"-"+day;
-
-			let temphtml = `
-						<tr onClick="location.href='detail.html?id=${boardDto.id}'" style="cursor:pointer;" class="active">
-						<td>${boardDto.id}</td>
-						<td>${boardDto.title}</td>
-						<td>${boardDto.writer} </td>
-						<td>${createDate}</td>
-						</tr>
-						`
-			return temphtml
-	}
-
-
 
     </script>
 

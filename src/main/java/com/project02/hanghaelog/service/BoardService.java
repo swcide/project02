@@ -14,14 +14,13 @@ public class BoardService {
 
     private final BoardRepository boardRepository;
 
-
-
-
     @Transactional
-    public Board boardDetail(Long id) {
-        return boardRepository.findById(id)
-
-                .orElseThrow(()-> new IllegalArgumentException("id를 찾지 못했습니다."));
+    public Long update(Long id, BoardRequestDto requestDto) {
+        Board b = boardRepository.findById(id).orElseThrow(
+                () -> new IllegalArgumentException("아이디가 존재하지 않습니다.")
+        );
+        b.update(requestDto);
+        return b.getId();
     }
 
 }

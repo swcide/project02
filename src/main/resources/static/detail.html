@@ -5,6 +5,8 @@
     <title>항해로그999</title>
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700|Poppins:300,400,500,600,700|PT+Serif:400,400i&display=swap"
           rel="stylesheet" type="text/css"/>
+
+    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png" />
     <link rel="stylesheet" href="css/bootstrap.css" type="text/css"/>
     <link rel="stylesheet" href="css/style.css" type="text/css"/>
     <link rel="stylesheet" href="css/dark.css" type="text/css"/>
@@ -39,9 +41,21 @@
                     ============================================= -->
                     <nav class="primary-menu col-lg-4 order-lg-3">
                         <ul class="menu-container justify-content-lg-end">
-                            <li class="menu-item"><a class="menu-link" href="index.html" style="padding-top: 39px; padding-bottom: 39px;"><div>Home</div></a></li>
-                            <li class="menu-item"><a class="menu-link" href="board.html"  style="padding-top: 39px; padding-bottom: 39px;"><div>Board</div></a></li>
-                            <li class="menu-item"><a class="menu-link color" href="write.html" style="padding-top: 39px; padding-bottom: 39px;"><div>wirght</div></a></li>
+                            <li class="menu-item">
+                                <a class="menu-link" href="javascript:void(0)" onclick="location.href='index.html'" style="padding-top: 39px; padding-bottom: 39px;">
+                                    <div>Home</div>
+                                </a>
+                            </li>
+                            <li class="menu-item">
+                                <a class="menu-link color" href="javascript:void(0)" onclick="location.href='index.html'" style="padding-top: 39px; padding-bottom: 39px;">
+                                    <div>Board</div>
+                                </a>
+                            </li>
+                            <li class="menu-item">
+                                <a class="menu-link " href="javascript:void(0)" onclick="location.href='index.html'" style="padding-top: 39px; padding-bottom: 39px;">
+                                    <div>write</div>
+                                </a>
+                            </li>
                         </ul>
                     </nav><!-- #primary-menu end -->
                 </div>
@@ -60,7 +74,7 @@
     <!-- Content
     ============================================= -->
     <section id="content" class="mt-3" style=" min-height: 600px;">
-        <div class="container pt-3 pb-3" style="  background-color: rgba(333, 333, 333, 0.8);">
+        <div class="container pt-3 pb-3 " id="goEdit" style="  background-color: rgba(333, 333, 333, 0.8);">
             <div class="postcontent p-lg-3">
                 <div class="single-post mb-0">
                     <!-- Single Post
@@ -82,7 +96,7 @@
                         <!-- Entry Content
                         ============================================= -->
                         <div class="entry-content mt-0">
-                            <p id="contents"></p>
+                            <p id="contents" style="font-size: 20px"></p>
                             <!-- Post Single - Content End -->
                             <div class="clear"></div>
                             <!-- Post Single - Share
@@ -92,9 +106,17 @@
                 </div>
             </div>
             <div class= "p-lg-3">
-                <a href="javascript:void(0)"  class="clearfix button button-rounded button-reveal button-small button-white button-light text-right">
+                <a href="board.html"  class="clearfix button button-rounded button-reveal button-small button-white button-light text-right">
                     <i class="icon-line-arrow-right"></i>
                     <span>목록으로</span>
+                </a>
+                <a href="javascript:void(0)" onclick="boardUpdateView()"  class="float-right clearfix button button-rounded button-reveal button-small button-white button-light text-right">
+                    <i class="icon-line-arrow-right"></i>
+                    <span>수정</span>
+                </a>
+                <a href="javascript:void(0)" onclick="boardDelete()"  class="float-right clearfix button button-rounded button-reveal button-small button-white button-light text-right">
+                    <i class="icon-line-arrow-right"></i>
+                    <span>삭제</span>
                 </a>
             </div>
         </div>
@@ -118,21 +140,16 @@
                         <div class="copyrights-menu copyright-links">
                             <a href="index.html">Home</a>
                         </div>
-
                         <a href="https://velog.io/@swcide"
                            class="social-icon inline-block si-small si-borderless mb-0 si-pinterest">
                             <i class="icon-bold1"></i>
                             <i class="icon-bold1"></i>
                         </a>
-
-
                         <a href="https://github.com/swcide"
                            class="social-icon inline-block si-small si-borderless mb-0 si-github">
                             <i class="icon-github"></i>
                             <i class="icon-github"></i>
                         </a>
-
-
                     </div>
                 </div>
 
@@ -148,31 +165,12 @@
 <script src="js/jquery.js"></script>
 <script src="js/functions.js"></script>
 <script src="js/plugins.min.js"></script>
+<script src="js/main.js"></script>
 <script>
     $(document).ready(function () {
         let id = document.location.href.split("?id=")[1]
         getDetail(id);
     })
-    function getDetail(id) {
-        let content = $('#contents')
-        let title = $('#title')
-        let writer = $('#writer')
-        let createDate = $('#createDate')
-        $.ajax({
-            type: 'GET',
-            url: `/api/board/detail/${id}`,
-            success: function (response) {  let javaDate = new Date(response.createdAt);
-                let year = javaDate.getFullYear()
-                let month = javaDate.getMonth()
-                let day = javaDate.getDay()
-                let date = year + "-" + month + "-" + day;
-                title.html(response.title)
-                content.text(response.content)
-                writer.html(response.writer)
-                createDate.text(date)
-            }
-        })
-    }
 </script>
 </body>
 </html>

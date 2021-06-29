@@ -3,6 +3,7 @@
 
 1. [프로젝트 소개](#프로젝트-소개)
 2. [서비스 기능](#서비스-기능)
+3. [구현내용](#구현내용)
 
 ## 프로젝트 소개
 
@@ -13,6 +14,8 @@
 1. 게시글 전체 목록 보기.
 2. 게시글 작성.
 3. 게시글 상세조회.
+4. 게시글 수정
+5. 게시글 삭제
 
 
 ## API 설계
@@ -22,5 +25,7 @@
 |게시글 전체 조회|GET|/api/board|List\<board>|
 |게시글 작성|POST|/api/board|Board|
 |게시글 상세조회|GET|/api/board/detail|board|
+|게시글 수정|PUT|/api/board/update/id|board|
+|게시글 삭제|PUT|/api/board/delete/id|board|
 
 

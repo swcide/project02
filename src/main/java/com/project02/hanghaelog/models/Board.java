@@ -23,18 +23,30 @@ public class Board extends Timestamped {
     @Column(nullable = false)
     private String content;
 
+    @Column(nullable = false)
+    private boolean status;
 
-    public Board(String title, String writer, String content) {
+    public Board(String title, String writer, String content,  boolean status) {
         this.title = title;
         this.writer = writer;
         this.content = content;
+        this.status =status;
     }
 
     public Board(BoardRequestDto requestDto) {
         this.title = requestDto.getTitle();
         this.writer = requestDto.getWriter();
         this.content = requestDto.getContent();
+        this.status = requestDto.isStatus();
     }
+
+    public void update(BoardRequestDto requestDto) {
+        this.title = requestDto.getTitle();
+        this.writer = requestDto.getWriter();
+        this.content = requestDto.getContent();
+        this.status = requestDto.isStatus();
+    }
+
 
 
 

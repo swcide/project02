@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
 	<title>항해로그999</title>
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700|Poppins:300,400,500,600,700|PT+Serif:400,400i&display=swap" rel="stylesheet" type="text/css" />
+
+	<link rel="shortcut icon" type="image/x-icon" href="images/favicon.png" />
 	<link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
     <link rel="stylesheet" href="css/style.css" type="text/css" />
     <link rel="stylesheet" href="css/dark.css" type="text/css" />
@@ -12,7 +14,6 @@
     <link rel="stylesheet" href="css/swiper.css" type="text/css" />
     <link rel="stylesheet" href="css/animate.css" type="text/css" />
     <link rel="stylesheet" href="css/bs-datatable.css" type="text/css" />
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body class="stretched sticky-footer ">
 	<!-- Document Wrapper
@@ -39,7 +40,7 @@
 							<ul class="menu-container justify-content-lg-end">
 								<li class="menu-item"><a class="menu-link" href="index.html" style="padding-top: 39px; padding-bottom: 39px;"><div>Home</div></a></li>
 								<li class="menu-item"><a class="menu-link" href="board.html"  style="padding-top: 39px; padding-bottom: 39px;"><div>Board</div></a></li>
-								<li class="menu-item"><a class="menu-link color" href="write.html" style="padding-top: 39px; padding-bottom: 39px;"><div>wirght</div></a></li>
+								<li class="menu-item"><a class="menu-link color" href="write.html" style="padding-top: 39px; padding-bottom: 39px;"><div>write</div></a></li>
 							</ul>
 						</nav><!-- #primary-menu end -->
 					</div>
@@ -65,17 +66,17 @@
 						<tbody>
 							<tr>
 								<td>
-									<input type="text" id="bTitle" name="bTitle" class="form-control" placeholder="글 제목" maxlength="50"/>
+									<input type="text" id="title" name="title" class="form-control" placeholder="글 제목" maxlength="30"/>
 								</td>
 							</tr>
 							<tr>
 								<td>
-									<input type="text" id="bWriter" name="bWriter" class="form-control" placeholder="작성자" maxlength="50"/>
+									<input type="text" id="writer" name="writer" class="form-control" placeholder="작성자" maxlength="10"/>
 								</td>
 							</tr>
 							<tr >
 								<td>
-									<textarea id="bContent"  name="bContent" class="form-control" placeholder="글 내용"  maxlength="2048" style="height: 350px;"></textarea>
+									<textarea id="contents"  name="contents" class="form-control" placeholder="글 내용"  maxlength="2048" style="height: 350px;"></textarea>
 								</td>
 							</tr>
 						</tbody>
@@ -128,59 +129,12 @@
 	<div id="gotoTop" class="icon-line-arrow-up"></div>
 	<!-- JavaScripts
 	============================================= -->
-<!--	<script src="js/jquery.js"></script>-->
+	<script src="js/jquery.js"></script>
 	<script src="js/functions.js"></script>
 	<script src="js/plugins.min.js"></script>
 	<script src="js/bs-datatable.js"></script>
-
-    <script>
-		function isValidContents(contents) {
-            if (contents == '') {
-                alert('내용을 입력해주세요');
-                return false;
-            }
-            if (contents.trim().length > 140) {
-                alert('공백 포함 140자 이하로 입력해주세요');
-                return false;
-            }
-            return true;
-        }
-		
-     
-
-		function boardWrite() {
-                let contents = $('#bContent').val();
-                let title = $('#bTitle').val();
-                let writer = $('#bWriter').val();
-
-                if (isValidContents(contents) == false) {
-                    return;
-                }
-                let data = {
-                			'writer':writer,
-							'title' :title,
-							'content':contents
-				};
-
-                console.log(data+"zzz");
-                console.log(JSON.stringify(data));
-                $.ajax({
-					type:"POST",
-					url:"/api/board",
-					contentType:"application/json",
-					data:JSON.stringify(data),
-                    success: function (response) {
-                         alert('메시지가 성공적으로 작성되었습니다.');
-						window.history.go(-1)
-                    }
-                });
-            }
-
-    </script>
-	
+	<script src="js/main.js"></script>
 	<!-- Footer Scripts
 	============================================= -->
-
-
 </body>
 </html>
