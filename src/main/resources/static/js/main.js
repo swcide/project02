@@ -65,20 +65,14 @@ function getBoardList(){
 function addHTML(boardDto){
     let date_1 = boardDto.createdAt
     console.log(date_1)
-
+    console.log(boardDto.id)
 
     let javaDate = new Date(boardDto.createdAt);
-    console.log(javaDate)
     let year = javaDate.getFullYear()
     let month = javaDate.getMonth()+1
     let day = javaDate.getDate()
 
-    console.log(year)
-    console.log(month)
-    console.log(day)
-
     let createDate = year+"-"+month+"-"+day;
-    console.log(createDate)
     return `
             <tr onClick="location.href='../detail.html?id=${boardDto.id}'" style="cursor:pointer;" class="active">
             <td>${boardDto.id}</td>
