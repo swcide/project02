@@ -7,7 +7,6 @@ function validate(check){
 // <---------------------보드페이지---------------------------->
 //보드 리스트
 function getBoardList(){
-    console.log("zz")
     $.ajax({
         type: 'GET',
         url: '/api/board',
@@ -192,7 +191,7 @@ function boardUpdateView(){
 function boardUpdate(){
     let check_confirm = confirm("수정하시겠습니까?")
     if(check_confirm === true){
-        console.log('??')
+
         let check_prompt = prompt("비밀번호 입력하세용","");
         if(check_prompt === "쿠쿠루삥뽕"){
             let content = $('#contents').val()

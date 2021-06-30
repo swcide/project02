@@ -1,5 +1,6 @@
 package com.project02.hanghaelog.controller;
 
+import ch.qos.logback.core.rolling.helper.IntegerTokenConverter;
 import com.project02.hanghaelog.models.Board;
 import com.project02.hanghaelog.models.BoardRepository;
 import com.project02.hanghaelog.models.BoardRequestDto;
@@ -33,6 +34,7 @@ public class BoardController {
     }
     @PutMapping("/api/board/update/{id}")
     public Long boardUpdate(@PathVariable Long id, @RequestBody BoardRequestDto requestDto) {
+
         boardService.update (id,requestDto);
         return id;
     }
